@@ -73,6 +73,7 @@ if is_torch_available() and is_transformers_available():
         CycleDiffusionPipeline,
         LDMTextToImagePipeline,
         StableDiffusionImageVariationPipeline,
+        StableDiffusionImageVariationEmbedsPipeline,
         StableDiffusionImg2ImgPipeline,
         StableDiffusionInpaintPipeline,
         StableDiffusionInpaintPipelineLegacy,

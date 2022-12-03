@@ -45,6 +45,7 @@ if is_transformers_available() and is_torch_available():
 
 if is_transformers_available() and is_torch_available() and is_transformers_version(">=", "4.25.0.dev0"):
     from .pipeline_stable_diffusion_image_variation import StableDiffusionImageVariationPipeline
+    from .pipeline_stable_diffusion_image_variation_embeds import StableDiffusionImageVariationEmbedsPipeline
 else:
     from ...utils.dummy_torch_and_transformers_objects import StableDiffusionImageVariationPipeline
 

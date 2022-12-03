@@ -20,6 +20,7 @@ if is_torch_available() and is_transformers_available():
     from .stable_diffusion import (
         CycleDiffusionPipeline,
         StableDiffusionImageVariationPipeline,
+        StableDiffusionImageVariationEmbedsPipeline,
         StableDiffusionImg2ImgPipeline,
         StableDiffusionInpaintPipeline,
         StableDiffusionInpaintPipelineLegacy,
