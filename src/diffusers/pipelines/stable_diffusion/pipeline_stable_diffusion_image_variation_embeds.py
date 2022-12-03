@@ -322,9 +322,9 @@ class StableDiffusionImageVariationEmbedsPipeline(DiffusionPipeline):
                 "`base_prompt` and `edit_prompt` have to be either both `None` or both not `None`"
             )
 
-        if edit_prompt_weight <= 0 or edit_prompt_weight > 1:
+        if edit_prompt_weight <= 0 or edit_prompt_weight > 2:
             raise ValueError(
-                f"`edit_prompt_weight` has to be between 0 and 1 but is {edit_prompt_weight}."
+                f"`edit_prompt_weight` has to be between 0 and 2 but is {edit_prompt_weight}."
             )
 
     # Copied from diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline.prepare_latents
