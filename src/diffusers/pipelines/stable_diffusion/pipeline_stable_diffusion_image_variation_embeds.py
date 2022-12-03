@@ -84,6 +84,8 @@ class StableDiffusionImageVariationEmbedsPipeline(DiffusionPipeline):
         ],
         safety_checker: StableDiffusionSafetyChecker,
         feature_extractor: CLIPFeatureExtractor,
+        text_processor: CLIPProcessor,
+        text_encoder: CLIPModel,
         requires_safety_checker: bool = True,
     ):
         super().__init__()
@@ -125,8 +127,8 @@ class StableDiffusionImageVariationEmbedsPipeline(DiffusionPipeline):
             new_config["sample_size"] = 64
             unet._internal_dict = FrozenDict(new_config)
 
-        self.text_processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14")
-        self.text_encoder = CLIPModel.from_pretrained("openai/clip-vit-large-patch14")
+        # self.text_processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14")
+        # self.text_encoder = CLIPModel.from_pretrained("openai/clip-vit-large-patch14")
 
         self.register_modules(
             vae=vae,
@@ -135,6 +137,8 @@ class StableDiffusionImageVariationEmbedsPipeline(DiffusionPipeline):
             scheduler=scheduler,
             safety_checker=safety_checker,
             feature_extractor=feature_extractor,
+            text_processor=text_processor,
+            text_encoder=text_encoder,
         )
         self.vae_scale_factor = 2 ** (len(self.vae.config.block_out_channels) - 1)
         self.register_to_config(requires_safety_checker=requires_safety_checker)
