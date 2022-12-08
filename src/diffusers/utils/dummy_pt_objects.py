@@ -152,6 +152,21 @@ class DiffusionPipeline(metaclass=DummyObject):
         requires_backends(cls, ["torch"])
 
 
+class AudioDiffusionPipeline(metaclass=DummyObject):
+    _backends = ["torch"]
+
+    def __init__(self, *args, **kwargs):
+        requires_backends(self, ["torch"])
+
+    @classmethod
+    def from_config(cls, *args, **kwargs):
+        requires_backends(cls, ["torch"])
+
+    @classmethod
+    def from_pretrained(cls, *args, **kwargs):
+        requires_backends(cls, ["torch"])
+
+
 class DanceDiffusionPipeline(metaclass=DummyObject):
     _backends = ["torch"]
 
@@ -242,6 +257,21 @@ class LDMSuperResolutionPipeline(metaclass=DummyObject):
         requires_backends(cls, ["torch"])
 
 
+class Mel(metaclass=DummyObject):
+    _backends = ["torch"]
+
+    def __init__(self, *args, **kwargs):
+        requires_backends(self, ["torch"])
+
+    @classmethod
+    def from_config(cls, *args, **kwargs):
+        requires_backends(cls, ["torch"])
+
+    @classmethod
+    def from_pretrained(cls, *args, **kwargs):
+        requires_backends(cls, ["torch"])
+
+
 class PNDMPipeline(metaclass=DummyObject):
     _backends = ["torch"]
 
@@ -318,6 +348,21 @@ class DDPMScheduler(metaclass=DummyObject):
 
 
 class DPMSolverMultistepScheduler(metaclass=DummyObject):
+    _backends = ["torch"]
+
+    def __init__(self, *args, **kwargs):
+        requires_backends(self, ["torch"])
+
+    @classmethod
+    def from_config(cls, *args, **kwargs):
+        requires_backends(cls, ["torch"])
+
+    @classmethod
+    def from_pretrained(cls, *args, **kwargs):
+        requires_backends(cls, ["torch"])
+
+
+class DPMSolverSinglestepScheduler(metaclass=DummyObject):
     _backends = ["torch"]
 
     def __init__(self, *args, **kwargs):
